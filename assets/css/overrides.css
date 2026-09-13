@@ -1,0 +1,7 @@
+.brand { flex-direction: row; align-items: center; gap: 10px; }
+.brand-logo { width: 46px; height: 46px; object-fit: cover; border-radius: 50%; }
+.brand-name, .brand-subtitle { display: block; }
+
+@media (max-width: 760px) {
+  .brand-logo { width: 39px; height: 39px; }
+}
