@@ -1,28 +1,30 @@
-# Café Entre Páginas — Web de preapertura v3
+# Café Entre Páginas · Web de preapertura
 
-## Estructura de publicación
+Versión v4 preparada para GitHub Pages.
 
-El contenido que debe publicarse en GitHub Pages es exactamente:
+## Estructura
 
-- `index.html`
-- `assets/`
-  - `css/`
-  - `js/`
-  - `images/`
-
-No existe una carpeta `cafe_work` intermedia.
+- `index.html`: estructura, textos, navegación y catálogo.
+- `assets/css/styles.css`: diseño principal.
+- `assets/css/overrides.css`: identidad visual del header.
+- `assets/js/main.js`: menú móvil y pequeño efecto de entrada de las tarjetas.
+- `assets/images/`: imágenes públicas de la web.
 
 ## Cambios de esta versión
 
-- Sustituido el flyer de apertura por la imagen corregida proporcionada.
-- El flyer principal se puede abrir a tamaño completo al hacer clic.
-- Las imágenes de las categorías de la carta funcionan como muestras y cada una abre su imagen completa al hacer clic.
-- `Nuestra historia` tiene un banner secundario y una composición con imagen de fondo tenue y texto superpuesto.
-- La sección de historia está preparada para `assets/images/café_libro1.jpeg`.
-- El logo del header aumenta de tamaño.
-- El header utiliza fondo verde caqui y tipografía beige.
-- Se mantienen las rutas relativas compatibles con GitHub Pages.
+- La cabecera de la sección Carta utiliza `assets/images/carta-banner.jpeg` como banner visual sticky. Las categorías se desplazan por debajo del banner.
+- Las hojas del banner permanecen visibles y el banner tiene sombra para reforzar el efecto de superposición.
+- Las categorías ocupan todo el ancho disponible del main y ya no se agrupan de dos en dos.
+- El título y la descripción breve aparecen antes de cada imagen.
+- Las imágenes muestran su proporción completa, sin recortes por `object-fit: cover`.
+- Cada imagen abre la carta completa en una nueva pestaña al hacer clic.
+- Se elimina la categoría duplicada `packs-cumpleaños`.
+- `Pack Pausa Saludable` y `Pack Recreo` aparecen consecutivamente.
+- Se añade `Zumos y otras bebidas saludables` con la nueva imagen proporcionada.
+- `Nuestra historia` usa `cafe_libro1.jpeg` como fondo, con el texto sobre una capa clara para conservar la legibilidad.
+- La frase `Dos placeres cotidianos. Un lugar para encontrarlos.` queda centrada bajo el título.
+- El logo del header aumenta de tamaño y el header mantiene fondo verde caqui con tipografía beige.
 
-## IMPORTANTE
+## Publicación
 
-El archivo exacto `café_libro1.jpeg` no estaba incluido en el ZIP de código disponible para esta actualización ni apareció entre los archivos adjuntos recuperables. Por eso el código referencia ese nombre, pero no se ha fabricado ni sustituido por otra fotografía. Añade la fotografía correcta con ese nombre en `assets/images/` antes de publicar esta versión.
+En GitHub Pages se debe publicar desde la rama `main` y la carpeta raíz `/ (root)`, donde se encuentra este `index.html`.

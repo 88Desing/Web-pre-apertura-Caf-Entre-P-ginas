@@ -1,5 +1,1 @@
-VERSION: 3
-ROOT FILES: index.html, README.md, assets/
-GITHUB PAGES ENTRYPOINT: index.html
-REQUIRED STORY IMAGE: assets/images/café_libro1.jpeg
-CORRECTED FLYER: assets/images/flyer-apertura-cep.jpeg
+v4 - Carta sticky + historia con cafe_libro1 + nuevas bebidas saludables
