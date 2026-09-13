@@ -1,14 +1,24 @@
 # Café Entre Páginas — web de preapertura
 
-Esta carpeta contiene una primera versión estática de la portada para GitHub Pages.
+Esta carpeta contiene la versión estática de la portada para GitHub Pages.
 
-## Archivos que se publican
+## Estructura
 
 - `index.html`: estructura, textos y enlaces de la página.
 - `assets/css/styles.css`: diseño principal.
-- `assets/css/overrides.css`: ajustes del logotipo.
+- `assets/css/overrides.css`: ajustes visuales de la versión de preapertura.
 - `assets/js/main.js`: menú para móvil.
-- `assets/images/`: solo imágenes aprobadas para la web pública.
+- `assets/images/`: imágenes públicas aprobadas para la web.
+
+## Cambios de esta versión
+
+- `flyer-apertura-cep.jpeg` pasa a ser la imagen principal de apertura.
+- La imagen principal enlaza al perfil de Instagram y mantiene visible el QR incluido en el flyer.
+- El eslogan principal es `Un café puede ser el principio de una gran historia.`
+- La frase secundaria de marca es `Porque algunas de las mejores conversaciones empiezan con un café, y algunos de los mejores viajes empiezan entre páginas.`
+- Se ha incorporado el texto completo de `Nuestra historia`.
+- Se han incorporado las nuevas imágenes de aguas, bebidas, cafés, comida, snacks y packs.
+- La sección de historia está preparada para usar `assets/images/café_libro1.jpeg` cuando se incorpore ese archivo. Mientras no exista, el navegador utiliza como respaldo la imagen de café ya existente, evitando una imagen rota.
 
 ## Publicar en GitHub
 
@@ -25,11 +35,3 @@ Esta carpeta contiene una primera versión estática de la portada para GitHub P
 - Email y teléfono: buscar `info@cafeentrepaginas.es`.
 - Enlace a Instagram: buscar `cafeentrepaginas.cafe`.
 - Textos y botones: están todos en `index.html`.
-
-## Antes de la apertura
-
-- Confirmar fecha de apertura.
-- Confirmar que el horario es definitivo.
-- Validar WhatsApp Business y enlazarlo.
-- Activar la carta/pedidos de Square y sustituir el aviso de próxima apertura.
-- Añadir fotos reales del local terminado y del producto servido.
