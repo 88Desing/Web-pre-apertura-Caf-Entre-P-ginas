@@ -1,1 +1,23 @@
 :root{--header-khaki:#5b6244;--header-beige:#f3eadc;--story-ink:#2e241d}.site-header{background:var(--header-khaki);border-bottom:1px solid rgba(243,234,220,.22);backdrop-filter:blur(12px)}.brand{color:var(--header-beige)}.brand-name,.brand-subtitle{color:var(--header-beige)}.main-menu a{color:var(--header-beige)}.main-menu a:hover{color:#fffaf1}.nav-instagram{border-color:var(--header-beige)}.menu-button span{background:var(--header-beige)}@media(max-width:760px){.main-menu{background:var(--header-khaki);border-bottom-color:rgba(243,234,220,.22)}}
+
+/* v5 refinements */
+.site-header{background:var(--header-khaki);border-bottom-color:rgba(243,234,220,.22)}
+.navigation{min-height:108px}
+.brand-logo{width:100px;height:100px;flex-basis:100px}
+.brand-copy{gap:8px}
+.nav-instagram{display:inline-flex;align-items:center;justify-content:center;padding:0;width:44px;height:44px;border:1px solid var(--header-beige);border-radius:50%}
+.nav-instagram-icon .instagram-icon{width:23px;height:23px}
+.instagram-icon{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.instagram-icon .instagram-dot{fill:currentColor;stroke:none}
+.catalogue-banner{top:108px;box-shadow:0 24px 48px rgba(45,35,29,.30);border-bottom:1px solid rgba(67,39,23,.16)}
+.catalogue-banner img{display:block;width:100%;height:auto}
+.catalogue-list{z-index:1}
+.product-card{position:relative;z-index:1}
+.story-background{background-image:linear-gradient(rgba(247,240,229,.64),rgba(247,240,229,.64)),url("../images/cafe_libro1.jpeg")}
+.story-copy{background:rgba(236,222,202,.76);backdrop-filter:blur(1.5px);}
+.visit-address{max-width:620px;color:#f4eee7!important;font-size:1.12rem!important;line-height:1.5}
+.footer-instagram{display:inline-flex;align-items:center;justify-content:center;width:62px;height:62px;margin-top:24px;border:1px solid rgba(255,253,249,.72);border-radius:50%;color:var(--cream);transition:.2s transform,.2s background}
+.footer-instagram:hover{transform:translateY(-2px);background:rgba(255,253,249,.10)}
+.footer-instagram .instagram-icon{width:34px;height:34px}
+@media(max-width:900px){.navigation{min-height:94px}.brand-logo{width:84px;height:84px;flex-basis:84px}.catalogue-banner{top:94px}}
+@media(max-width:760px){.navigation{min-height:78px}.brand-logo{width:64px;height:64px;flex-basis:64px}.main-menu{top:78px}.catalogue-banner{top:78px}.footer-instagram{width:58px;height:58px}.footer-instagram .instagram-icon{width:31px;height:31px}}
