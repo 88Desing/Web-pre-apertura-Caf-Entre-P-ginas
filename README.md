@@ -1,6 +1,6 @@
 # Café Entre Páginas · Web de preapertura
 
-Versión v4 preparada para GitHub Pages.
+Versión v6 preparada para GitHub Pages.
 
 ## Estructura
 
@@ -28,3 +28,9 @@ Versión v4 preparada para GitHub Pages.
 ## Publicación
 
 En GitHub Pages se debe publicar desde la rama `main` y la carpeta raíz `/ (root)`, donde se encuentra este `index.html`.
+## Cambios de esta versión v6
+
+- Se añade `Hacer pedido` en la navegación principal.
+- Se añade `Hacer pedido` como llamada a la acción visible en el hero.
+- Ambos enlaces llevan directamente a `https://cafe-entre-paginas.square.site`.
+- No se modifica la integración con el dominio propio de Square ni se requiere una cuenta bancaria de empresa para estos enlaces.

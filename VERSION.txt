@@ -1,2 +1,2 @@
-Café Entre Páginas — Web pre-apertura — v5
-Ajustes: banner sticky de carta, historia con café_libro1, Instagram y horario/dirección.
+Café Entre Páginas — Web de pre-apertura — v6
+Ajustes: CTA de pedidos online conectado al subdominio de Square.
