@@ -64,3 +64,73 @@
     color:#fffaf1!important;
   }
 }
+
+
+/* v8 — carta en carrusel horizontal, zoom y modal */
+.catalogue-list{
+  display:flex;
+  gap:22px;
+  overflow-x:auto;
+  overscroll-behavior-inline:contain;
+  scroll-snap-type:x mandatory;
+  scroll-padding-inline:16px;
+  padding:24px 4px 30px;
+  margin-top:-24px;
+  scrollbar-width:thin;
+}
+.product-card{
+  flex:0 0 clamp(285px, 34vw, 430px);
+  scroll-snap-align:start;
+  display:flex;
+  flex-direction:column;
+  min-width:0;
+}
+.product-copy{padding:22px 24px 18px}
+.product-copy h3{font-size:clamp(1.55rem,2.5vw,2.25rem);letter-spacing:-.035em}
+.product-copy p:last-child{font-size:.95rem}
+.catalogue-image-link{margin-top:auto;position:relative}
+.catalogue-image-link img{
+  width:100%;
+  height:360px;
+  object-fit:contain;
+  background:linear-gradient(135deg,#f5ede2,#e9ddcd);
+  transform:scale(1);
+  transition:transform .35s ease,filter .35s ease;
+}
+.catalogue-image-link:hover img,
+.catalogue-image-link:focus-visible img{transform:scale(1.045);filter:brightness(.98)}
+.catalogue-image-link::after{
+  content:'Ampliar';
+  position:absolute;
+  right:12px;
+  bottom:12px;
+  padding:5px 9px;
+  border-radius:999px;
+  background:rgba(47,56,39,.88);
+  color:#fffdf9;
+  font-size:.68rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  pointer-events:none;
+}
+.catalogue-list::after{content:'Desliza para ver más →';flex:0 0 auto;align-self:center;color:var(--olive);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;writing-mode:vertical-rl;transform:rotate(180deg)}
+.optional-asset-card{display:flex}
+.image-modal[hidden]{display:none}
+.image-modal{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px}
+.image-modal-backdrop{position:absolute;inset:0;background:rgba(25,28,22,.82);backdrop-filter:blur(4px)}
+.image-modal-panel{position:relative;z-index:1;width:min(94vw,1100px);max-height:94vh;padding:22px;background:var(--cream);box-shadow:0 24px 90px rgba(0,0,0,.35);overflow:auto}
+.image-modal-panel img{display:block;width:100%;max-height:78vh;object-fit:contain;background:#eee5d9}
+.image-modal-close{position:absolute;right:10px;top:10px;z-index:2;width:40px;height:40px;border:0;border-radius:50%;background:var(--espresso);color:var(--cream);font-size:1.8rem;line-height:1;cursor:pointer}
+.image-modal-caption{margin:10px 0 0;color:var(--muted);font-size:.78rem;text-align:center}
+@media(max-width:760px){
+  .catalogue-list{gap:16px;padding-bottom:24px}
+  .product-card{flex-basis:min(82vw,360px)}
+  .catalogue-image-link img{height:310px}
+  .catalogue-list::after{display:none}
+  .image-modal{padding:12px}
+  .image-modal-panel{padding:12px}
+}
+
+/* v8 — jerarquía visual del bloque de apertura */
+.visit .eyebrow-light{font-size:1.45rem;letter-spacing:.11em;margin-bottom:12px}
+.visit-panel h2{font-size:clamp(1.35rem,2.2vw,2rem);margin-bottom:14px}
