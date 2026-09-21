@@ -1,2 +1,2 @@
-Café Entre Páginas — Web de pre-apertura — v6
-Ajustes: CTA de pedidos online conectado al subdominio de Square.
+Café Entre Páginas - v7
+Cambios: imágenes actualizadas; eliminado catálogo_snacks_saludables1; añadidas comida saludable 1/2, packs regalo 1/2 y sección de revistas.
