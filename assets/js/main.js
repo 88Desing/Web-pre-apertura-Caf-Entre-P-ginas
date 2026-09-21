@@ -82,3 +82,35 @@ if (banner && cards.length && 'IntersectionObserver' in window) {
   });
   cards.forEach((card) => observer.observe(card));
 }
+
+// v9: navegación con botones inspirados en las hojas de un libro.
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const track = carousel.querySelector('[data-carousel-track]');
+  const previous = carousel.querySelector('[data-carousel-prev]');
+  const next = carousel.querySelector('[data-carousel-next]');
+  if (!track || !previous || !next) return;
+
+  const getStep = () => {
+    const card = track.querySelector('.product-card');
+    if (!card) return Math.max(track.clientWidth * 0.8, 280);
+    const styles = window.getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
+    return card.getBoundingClientRect().width + gap;
+  };
+
+  const updateButtons = () => {
+    const maxScroll = track.scrollWidth - track.clientWidth - 2;
+    previous.disabled = track.scrollLeft <= 2;
+    next.disabled = track.scrollLeft >= maxScroll;
+  };
+
+  previous.addEventListener('click', () => {
+    track.scrollBy({ left: -getStep(), behavior: 'smooth' });
+  });
+  next.addEventListener('click', () => {
+    track.scrollBy({ left: getStep(), behavior: 'smooth' });
+  });
+  track.addEventListener('scroll', updateButtons, { passive: true });
+  window.addEventListener('resize', updateButtons);
+  updateButtons();
+});
