@@ -1,4 +1,4 @@
-# Café Entre Páginas — Web de preapertura · V11.1
+# Café Entre Páginas — Web de preapertura · V11.2
 
 Versión 11.1 construida sobre la V11 estable.
 
@@ -27,9 +27,16 @@ Sube el contenido de este ZIP a la raíz del repositorio:
 
 No subas la carpeta contenedora completa como un nivel adicional.
 
-## V11.1
+## V11.2
 - Correcciones de texto en la cabecera de Carta.
 - Reorganización de Club Café Entre Páginas.
 - Pack Personalizado movido a `Para Regalar`.
 - Nueva imagen de Snacks para niños.
 - UAT End-to-End del flujo de pedidos Square registrado en `HISTORIAL_DESARROLLO.md`.
+
+
+## SEO técnico V11.2
+- URL canónica: https://www.cafeentrepaginas.es/
+- robots.txt permite rastreo y declara sitemap.xml.
+- sitemap.xml incluye la home canónica.
+- Metadatos SEO/Open Graph y datos estructurados CafeOrCoffeeShop añadidos.

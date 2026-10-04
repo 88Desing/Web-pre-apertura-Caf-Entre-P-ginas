@@ -43,3 +43,12 @@
 
 **Conclusión:**  
 El flujo principal de compra ha sido validado satisfactoriamente de extremo a extremo en entorno real. La integración se considera funcional para pedidos online. Queda únicamente verificar la liberación final de la retención tras la cancelación, proceso dependiente de los tiempos de la entidad bancaria.
+
+
+## V11.2 — SEO técnico e indexación
+- Añadido `rel=canonical` hacia `https://www.cafeentrepaginas.es/`.
+- Añadido `meta robots` con `index, follow`.
+- Añadidos `robots.txt` y `sitemap.xml`.
+- Mejorados title y meta description para búsqueda local en Alcobendas.
+- Añadidos metadatos Open Graph.
+- Añadidos datos estructurados JSON-LD de tipo `CafeOrCoffeeShop`.
