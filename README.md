@@ -1,18 +1,21 @@
-# Café Entre Páginas — Web de preapertura · V10
+# Café Entre Páginas — Web de preapertura · V11
 
-Versión 10 construida sobre la V9 estable.
+Versión 11 construida sobre la V10 estable.
 
 ## Cambios principales
-- El banner de Carta deja de ser sticky.
-- Transición ligera al desaparecer durante el scroll, con fallback a bloque normal si JavaScript no está disponible.
-- Nuevo menú principal de Carta: Bebidas, Comida, Packs, Revistas / Libros y Servicios.
-- Subcategorías y opciones desplegadas desde un único modelo de datos en JavaScript.
-- Cada opción abre la imagen o galería correspondiente en un modal dentro de la misma pestaña.
-- El carrusel se conserva y ahora se filtra por la categoría seleccionada.
-- Horario actualizado.
-- CTA de reseñas de Google integrado al final de la navegación, junto a Visítanos.
-- En móvil, la imagen de reseñas también es pulsable y lleva directamente a Google Reviews.
-- Se mantiene la integración de pedidos con Square.
+- Eliminado por completo el carrusel visual de imágenes de la Carta.
+- Se mantiene el panel boutique de categorías y subcategorías como sistema principal de navegación.
+- Nueva categoría principal: Merchandising.
+- Merchandising incluye:
+  - Bolsas de café de especialidad.
+  - Termo.
+  - Bolígrafo Bambú.
+  - Marcapáginas CEP.
+  - Lonchera (pendiente de realizar pedido).
+- Cada opción abre el detalle correspondiente mediante el modal existente.
+- La imagen de bolsas de café que estaba pendiente en V10 pasa a utilizarse activamente.
+- Se incorpora la nueva imagen general de merchandising para termo, bolígrafo, marcapáginas y lonchera.
+- Se mantiene el resto de V10: menú por categorías, banner no-sticky con transición ligera, horario actualizado, reseñas Google, pedidos Square, Nuestra Historia y diseño responsive.
 
 ## Publicación en GitHub Pages
 Sube el contenido de este ZIP a la raíz del repositorio:
@@ -23,6 +26,3 @@ Sube el contenido de este ZIP a la raíz del repositorio:
 - assets/
 
 No subas la carpeta contenedora completa como un nivel adicional.
-
-## Nota sobre imágenes
-`pendiente-merchandising-cafe.jpeg` se incluye como recurso pendiente, pero no se muestra porque no existe todavía una categoría de merchandising definida en la arquitectura solicitada.

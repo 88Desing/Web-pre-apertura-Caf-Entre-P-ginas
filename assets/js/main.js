@@ -237,14 +237,88 @@ const CATALOGUE_DATA = [
         ]
       }
     ]
+  },
+  {
+    id: 'merchandising',
+    title: 'Merchandising',
+    intro: 'Detalles de Café Entre Páginas pensados para acompañarte más allá del café: para casa, para regalar o para llevar contigo.',
+    groups: [
+      {
+        title: 'Café para casa',
+        entries: [
+          {
+            id: 'merch-bolsas-cafe',
+            title: 'Bolsas de café',
+            products: 'Café de especialidad Randall Coffee Roasters · Amazonia / Perú San Martín Decaf · 250 g · en grano o molido',
+            images: [
+              {
+                src: 'assets/images/merchandising-bolsas-cafe.jpeg',
+                alt: 'Bolsas de café de especialidad Café Entre Páginas',
+                label: 'Bolsas de café de especialidad'
+              }
+            ]
+          }
+        ]
+      },
+      {
+        title: 'Merchandising Café Entre Páginas',
+        entries: [
+          {
+            id: 'merch-termo',
+            title: 'Termo',
+            products: 'Termo de bambú · 500 ml.',
+            images: [
+              {
+                src: 'assets/images/merchandising-accesorios.jpeg',
+                alt: 'Merchandising Café Entre Páginas: termo, bolígrafo, marcapáginas y lonchera',
+                label: 'Merchandising Café Entre Páginas'
+              }
+            ]
+          },
+          {
+            id: 'merch-boligrafo',
+            title: 'Bolígrafo Bambú',
+            products: 'Bolígrafo de bambú o madera natural con grabado láser.',
+            images: [
+              {
+                src: 'assets/images/merchandising-accesorios.jpeg',
+                alt: 'Merchandising Café Entre Páginas: termo, bolígrafo, marcapáginas y lonchera',
+                label: 'Merchandising Café Entre Páginas'
+              }
+            ]
+          },
+          {
+            id: 'merch-marcapaginas',
+            title: 'Marcapáginas CEP',
+            products: 'Marcapáginas de bambú con grabado láser.',
+            images: [
+              {
+                src: 'assets/images/merchandising-accesorios.jpeg',
+                alt: 'Merchandising Café Entre Páginas: termo, bolígrafo, marcapáginas y lonchera',
+                label: 'Merchandising Café Entre Páginas'
+              }
+            ]
+          },
+          {
+            id: 'merch-lonchera',
+            title: 'Lonchera',
+            products: 'Lonchera Café Entre Páginas · pendiente de realizar pedido.',
+            images: [
+              {
+                src: 'assets/images/merchandising-accesorios.jpeg',
+                alt: 'Merchandising Café Entre Páginas: termo, bolígrafo, marcapáginas y lonchera',
+                label: 'Merchandising Café Entre Páginas'
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 ];
 
 const categoryTabs = document.querySelector('#category-tabs');
 const categoryPanel = document.querySelector('#category-panel');
-const catalogueList = document.querySelector('#catalogue-list');
-const carouselTitle = document.querySelector('#carousel-title');
-const carouselStatus = document.querySelector('#carousel-status');
 let activeCategoryId = CATALOGUE_DATA[0].id;
 
 const modal = document.querySelector('#image-modal');
@@ -262,18 +336,6 @@ function allEntriesForCategory(category) {
   return category.groups.flatMap((group) => group.entries.map((entry) => ({ ...entry, groupTitle: group.title })));
 }
 
-function uniqueImagesForCategory(category) {
-  const seen = new Set();
-  const result = [];
-  allEntriesForCategory(category).forEach((entry) => {
-    entry.images.forEach((image) => {
-      if (seen.has(image.src)) return;
-      seen.add(image.src);
-      result.push({ ...image, entryTitle: entry.title, groupTitle: entry.groupTitle });
-    });
-  });
-  return result;
-}
 
 function renderTabs() {
   if (!categoryTabs) return;
@@ -338,36 +400,6 @@ function renderCategoryPanel(category) {
   });
 }
 
-function renderCarousel(category) {
-  if (!catalogueList) return;
-  const images = uniqueImagesForCategory(category);
-  carouselTitle.textContent = category.title;
-  carouselStatus.textContent = `${images.length} ${images.length === 1 ? 'propuesta visual' : 'propuestas visuales'} · desliza o usa las páginas laterales.`;
-
-  catalogueList.innerHTML = images.map((image, index) => `
-    <article class="product-card">
-      <div class="product-copy">
-        <p class="card-kicker">${image.groupTitle}</p>
-        <h3>${image.label || image.entryTitle}</h3>
-        <p>${image.entryTitle}</p>
-      </div>
-      <button class="catalogue-image-button" type="button" data-carousel-image="${index}" aria-label="Ampliar ${image.label || image.entryTitle}">
-        <img src="${image.src}" alt="${image.alt}" loading="lazy">
-      </button>
-    </article>
-  `).join('');
-
-  catalogueList.querySelectorAll('[data-carousel-image]').forEach((button) => {
-    button.addEventListener('click', () => {
-      const index = Number(button.dataset.carouselImage);
-      const image = images[index];
-      if (image) openImageGallery([image], image.label || image.entryTitle);
-    });
-  });
-
-  catalogueList.scrollTo({ left: 0, behavior: 'auto' });
-  setupCarousel(document.querySelector('[data-carousel]'));
-}
 
 function activateCategory(categoryId, focusPanel = false) {
   const category = CATALOGUE_DATA.find((item) => item.id === categoryId);
@@ -375,7 +407,6 @@ function activateCategory(categoryId, focusPanel = false) {
   activeCategoryId = categoryId;
   renderTabs();
   renderCategoryPanel(category);
-  renderCarousel(category);
   if (focusPanel) categoryPanel?.focus({ preventScroll: true });
 }
 
@@ -433,35 +464,7 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'ArrowRight' && modalGallery.length > 1) modalNext?.click();
 });
 
-function setupCarousel(carousel) {
-  if (!carousel) return;
-  const track = carousel.querySelector('[data-carousel-track]');
-  const previous = carousel.querySelector('[data-carousel-prev]');
-  const next = carousel.querySelector('[data-carousel-next]');
-  if (!track || !previous || !next) return;
-
-  const getStep = () => {
-    const card = track.querySelector('.product-card');
-    if (!card) return Math.max(track.clientWidth * 0.8, 280);
-    const styles = window.getComputedStyle(track);
-    const gap = parseFloat(styles.columnGap || styles.gap || '0') || 0;
-    return card.getBoundingClientRect().width + gap;
-  };
-
-  const updateButtons = () => {
-    const maxScroll = Math.max(0, track.scrollWidth - track.clientWidth - 2);
-    previous.disabled = track.scrollLeft <= 2;
-    next.disabled = track.scrollLeft >= maxScroll;
-  };
-
-  previous.onclick = () => track.scrollBy({ left: -getStep(), behavior: 'smooth' });
-  next.onclick = () => track.scrollBy({ left: getStep(), behavior: 'smooth' });
-  track.onscroll = updateButtons;
-  window.addEventListener('resize', updateButtons, { passive: true });
-  requestAnimationFrame(updateButtons);
-}
-
-/* V10: transición ligera del banner al salir de la vista.
+/* V11: transición ligera del banner al salir de la vista.
    Si este JS no se ejecuta, el banner se comporta como un bloque normal. */
 const catalogueBanner = document.querySelector('#carta-banner');
 const reduceMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;

@@ -212,142 +212,6 @@
   white-space:nowrap;
 }
 
-/* V10: carrusel filtrado por categoría */
-.visual-browser{
-  padding-top:8px;
-  border-top:1px solid rgba(67,39,23,.11);
-}
-.visual-browser-heading{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:28px;
-  margin:24px 60px 8px;
-}
-.visual-browser-heading h3{
-  margin:0;
-  font-size:clamp(1.9rem,3vw,2.8rem);
-}
-.carousel-status{
-  margin:0 0 4px;
-  max-width:380px;
-  color:var(--muted);
-  font-size:.84rem;
-  text-align:right;
-}
-.catalogue-carousel{
-  position:relative;
-  display:grid;
-  grid-template-columns:auto minmax(0,1fr) auto;
-  align-items:center;
-  gap:12px;
-}
-.catalogue-list{
-  min-width:0;
-  display:flex;
-  gap:22px;
-  overflow-x:auto;
-  overscroll-behavior-inline:contain;
-  scroll-snap-type:x mandatory;
-  scroll-padding-inline:16px;
-  padding:22px 4px 30px;
-  margin:0;
-  scrollbar-width:thin;
-}
-.product-card{
-  flex:0 0 clamp(285px,34vw,430px);
-  scroll-snap-align:start;
-  display:flex;
-  flex-direction:column;
-  min-width:0;
-  position:relative;
-  background:var(--cream);
-  box-shadow:0 16px 40px rgba(67,39,23,.09);
-  overflow:hidden;
-  border:1px solid rgba(67,39,23,.08);
-}
-.product-copy{padding:22px 24px 18px}
-.product-copy h3{
-  margin:5px 0 8px;
-  font-size:clamp(1.55rem,2.5vw,2.25rem);
-  letter-spacing:-.035em;
-}
-.product-copy p:last-child{margin:0;color:var(--muted);font-size:.95rem}
-.catalogue-image-button{
-  margin-top:auto;
-  position:relative;
-  display:block;
-  width:100%;
-  padding:0;
-  border:0;
-  background:#eee5d9;
-  cursor:zoom-in;
-  overflow:hidden;
-}
-.catalogue-image-button img{
-  display:block;
-  width:100%;
-  height:360px;
-  object-fit:contain;
-  background:linear-gradient(135deg,#f5ede2,#e9ddcd);
-  transform:scale(1);
-  transition:transform .35s ease,filter .35s ease;
-}
-.catalogue-image-button:hover img,
-.catalogue-image-button:focus-visible img{
-  transform:scale(1.045);
-  filter:brightness(.98);
-}
-.catalogue-image-button::after{
-  content:"Ampliar";
-  position:absolute;
-  right:12px;
-  bottom:12px;
-  padding:5px 9px;
-  border-radius:999px;
-  background:rgba(47,56,39,.88);
-  color:#fffdf9;
-  font-size:.68rem;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-  pointer-events:none;
-}
-.carousel-nav{
-  position:relative;
-  display:grid;
-  place-items:center;
-  width:48px;
-  height:76px;
-  padding:0;
-  border:1px solid rgba(67,39,23,.22);
-  color:var(--espresso);
-  background:linear-gradient(135deg,#fffdf9 0%,#eadbc8 100%);
-  box-shadow:0 8px 18px rgba(67,39,23,.12);
-  cursor:pointer;
-  font-family:Georgia,"Times New Roman",serif;
-  font-size:3rem;
-  line-height:1;
-  transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
-}
-.carousel-nav::before{
-  content:"";
-  position:absolute;
-  inset:7px 6px;
-  border:1px solid rgba(67,39,23,.14);
-  pointer-events:none;
-}
-.carousel-nav-prev{border-radius:16px 4px 4px 16px}
-.carousel-nav-next{border-radius:4px 16px 16px 4px}
-.carousel-nav:hover:not(:disabled),
-.carousel-nav:focus-visible:not(:disabled){
-  transform:translateY(-3px) scale(1.03);
-  box-shadow:0 12px 24px rgba(67,39,23,.18);
-  background:linear-gradient(135deg,#fffdf9 0%,#dce2c9 100%);
-  outline:2px solid var(--olive-soft);
-  outline-offset:3px;
-}
-.carousel-nav:disabled{opacity:.28;cursor:not-allowed;box-shadow:none}
-
 /* Story / visit preserved from V9 */
 .story-background{
   background-image:linear-gradient(rgba(247,240,229,.64),rgba(247,240,229,.64)),url("../images/cafe_libro1.jpeg");
@@ -549,18 +413,6 @@ body.modal-open{overflow:hidden}
   .catalogue-group{padding:16px}
   .catalogue-option{grid-template-columns:1fr;padding:14px}
   .catalogue-option-open{white-space:normal}
-  .visual-browser-heading{
-    margin:18px 42px 4px;
-    align-items:start;
-    flex-direction:column;
-    gap:8px;
-  }
-  .carousel-status{text-align:left}
-  .catalogue-carousel{gap:7px}
-  .carousel-nav{width:34px;height:62px;font-size:2.2rem}
-  .catalogue-list{gap:16px;padding-bottom:24px}
-  .product-card{flex-basis:min(82vw,360px)}
-  .catalogue-image-button img{height:310px}
 
   .opening-hours div{grid-template-columns:92px minmax(0,1fr);font-size:.92rem}
   .review-cta{padding-bottom:70px}
@@ -575,6 +427,13 @@ body.modal-open{overflow:hidden}
   .image-modal-meta{align-items:flex-start;flex-direction:column;gap:5px}
 }
 @media(max-width:390px){
-  .visual-browser-heading{margin-left:38px;margin-right:38px}
   .opening-hours div{grid-template-columns:1fr;gap:0}
+}
+
+/* V11: panel de opciones como único navegador visual de la carta */
+.catalogue-menu-shell{
+  margin-bottom:18px;
+}
+.catalogue-menu-panel{
+  scroll-margin-top:130px;
 }
