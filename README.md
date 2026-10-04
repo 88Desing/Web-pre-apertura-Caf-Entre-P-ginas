@@ -1,6 +1,6 @@
-# Café Entre Páginas — Web de preapertura · V11
+# Café Entre Páginas — Web de preapertura · V11.1
 
-Versión 11 construida sobre la V10 estable.
+Versión 11.1 construida sobre la V11 estable.
 
 ## Cambios principales
 - Eliminado por completo el carrusel visual de imágenes de la Carta.
@@ -26,3 +26,10 @@ Sube el contenido de este ZIP a la raíz del repositorio:
 - assets/
 
 No subas la carpeta contenedora completa como un nivel adicional.
+
+## V11.1
+- Correcciones de texto en la cabecera de Carta.
+- Reorganización de Club Café Entre Páginas.
+- Pack Personalizado movido a `Para Regalar`.
+- Nueva imagen de Snacks para niños.
+- UAT End-to-End del flujo de pedidos Square registrado en `HISTORIAL_DESARROLLO.md`.

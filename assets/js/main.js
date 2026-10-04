@@ -113,6 +113,7 @@ const CATALOGUE_DATA = [
             products: 'Fruit Rolls · Barritas Zest · Chips de Fresa · Frutos Secos Premium · Lata de Frutos Secos Picantes · Student Mix · Barrita BE-KIND · Snacks para bebés',
             images: [
               { src: 'assets/images/catalogo-snacks.jpeg', alt: 'Carta de snacks de Café Entre Páginas', label: 'Snacks' },
+              { src: 'assets/images/catalogo-snacks-ninos.jpeg', alt: 'Carta de snacks naturales para niños de Café Entre Páginas', label: 'Snacks para niños' },
               { src: 'assets/images/catalogo-snacks-bebes.jpeg', alt: 'Carta de snacks para bebés de Café Entre Páginas', label: 'Snacks para bebés' }
             ]
           }
@@ -129,15 +130,15 @@ const CATALOGUE_DATA = [
         title: 'Para Regalar',
         entries: [
           { id: 'pack-historia', title: 'Historia', products: 'Café de especialidad y detalle con intención.', images: [{ src: 'assets/images/pack-historia.jpeg', alt: 'Pack Historia de Café Entre Páginas', label: 'Pack Historia' }] },
-          { id: 'pack-relatos', title: 'Relatos', products: 'Café, lectura y buenos momentos.', images: [{ src: 'assets/images/pack-relatos.jpeg', alt: 'Pack Relatos de Café Entre Páginas', label: 'Pack Relatos' }] }
+          { id: 'pack-relatos', title: 'Relatos', products: 'Café, lectura y buenos momentos.', images: [{ src: 'assets/images/pack-relatos.jpeg', alt: 'Pack Relatos de Café Entre Páginas', label: 'Pack Relatos' }] },
+          { id: 'pack-personalizado', title: 'Personalizado', products: 'Crea tu propio pack a medida.', images: [{ src: 'assets/images/pack-personalizable.jpeg', alt: 'Pack personalizable de Café Entre Páginas', label: 'Pack Personalizado' }] }
         ]
       },
       {
         title: 'Cumpleaños Infantiles',
         entries: [
           { id: 'pack-cuento', title: 'Cuento', products: 'Pack infantil para celebraciones.', images: [{ src: 'assets/images/pack-cuento.jpeg', alt: 'Pack Cuento de Café Entre Páginas', label: 'Pack Cuento' }] },
-          { id: 'pack-pequenos-lectores', title: 'Pequeños Lectores', products: 'Pack infantil con revista y productos seleccionados.', images: [{ src: 'assets/images/pack-pequenos-lectores.jpeg', alt: 'Pack Pequeños Lectores de Café Entre Páginas', label: 'Pack Pequeños Lectores' }] },
-          { id: 'pack-personalizado', title: 'Personalizado', products: 'Crea tu propio pack a medida.', images: [{ src: 'assets/images/pack-personalizable.jpeg', alt: 'Pack personalizable de Café Entre Páginas', label: 'Pack Personalizado' }] }
+          { id: 'pack-pequenos-lectores', title: 'Pequeños Lectores', products: 'Pack infantil con revista y productos seleccionados.', images: [{ src: 'assets/images/pack-pequenos-lectores.jpeg', alt: 'Pack Pequeños Lectores de Café Entre Páginas', label: 'Pack Pequeños Lectores' }] }
         ]
       },
       {
@@ -207,6 +208,12 @@ const CATALOGUE_DATA = [
         title: 'Club Café Entre Páginas',
         entries: [
           {
+            id: 'club-ventajas-socios',
+            title: 'Ventajas para socios',
+            products: 'Resumen de ventajas exclusivas para miembros del Club Café Entre Páginas.',
+            images: [{ src: 'assets/images/servicio-club-principal.jpeg', alt: 'Ventajas exclusivas para socios del Club Entre Páginas', label: 'Club Café Entre Páginas · Ventajas para socios' }]
+          },
+          {
             id: 'club-beneficio-1',
             title: 'Beneficio 1',
             products: 'Tarjeta de sellos y 9.º café gratis.',
@@ -215,11 +222,8 @@ const CATALOGUE_DATA = [
           {
             id: 'club-beneficio-2',
             title: 'Beneficio 2',
-            products: 'Cumpleaños, experiencias y ventajas pensadas para miembros del Club.',
-            images: [
-              { src: 'assets/images/servicio-club-principal.jpeg', alt: 'Beneficios exclusivos del Club Entre Páginas', label: 'Club Café Entre Páginas · Beneficios' },
-              { src: 'assets/images/servicio-club-2.jpeg', alt: 'Regalo de cumpleaños para miembros del Club Entre Páginas', label: 'Club Café Entre Páginas · Cumpleaños' }
-            ]
+            products: 'Regalo especial de cumpleaños para miembros del Club.',
+            images: [{ src: 'assets/images/servicio-club-2.jpeg', alt: 'Regalo de cumpleaños para miembros del Club Entre Páginas', label: 'Club Café Entre Páginas · Beneficio 2' }]
           }
         ]
       },
